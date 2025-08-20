@@ -1,6 +1,6 @@
-# Midnight Escales
+# Midnight Escale
 
-A luxury travel website showcasing Moroccan experiences, itineraries, and services. Built with Next.js and modern web technologies.
+A luxury travel website showcasing Moroccan experiences, itineraries, and services. Built with Next.js frontend and FastAPI backend (in development).
 
 ## Project Structure
 
@@ -12,7 +12,17 @@ midnightescales/
     ├── hooks/       # Custom React hooks
     ├── lib/         # Utility functions and constants
     └── public/      # Static assets and images
+└── backend/          # FastAPI backend (coming soon)
 ```
+
+## Current Status
+
+The project is currently frontend-only while the FastAPI backend is being developed. The backend will handle:
+- User authentication and authorization
+- Experience and itinerary management
+- Contact form submissions
+- Content management system
+- API integrations
 
 ## Features
 
@@ -29,6 +39,7 @@ midnightescales/
 
 - Node.js (v18 or higher)
 - npm or yarn
+- Python 3.9+ (for backend - coming soon)
 
 ### Installation
 
@@ -38,7 +49,7 @@ git clone [your-repository-url]
 cd midnightescales
 ```
 
-2. Install dependencies:
+2. Install frontend dependencies:
 ```bash
 cd client
 npm install
@@ -58,6 +69,7 @@ The project uses:
 - TypeScript for type safety
 - Tailwind CSS for styling
 - ESLint for code linting
+- FastAPI (Python) for backend (coming soon)
 
 ## Project Pages
 
@@ -77,5 +89,3 @@ The project uses:
 ## [LICENSE](LICENSE)
 
 🚫 This repository is not open-source. All rights reserved.
-
-
