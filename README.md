@@ -41,27 +41,6 @@ The project is currently frontend-only while the FastAPI backend is being develo
 - npm or yarn
 - Python 3.9+ (for backend - coming soon)
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone [your-repository-url]
-cd midnightescales
-```
-
-2. Install frontend dependencies:
-```bash
-cd client
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:3000`.
-
 ## Development
 
 The project uses:
@@ -80,11 +59,6 @@ The project uses:
 - `/journal`: Travel blog and guides
 - `/contact`: Inquiry form
 
-## Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Submit a pull request
 
 ## [LICENSE](LICENSE)
 
