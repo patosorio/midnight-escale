@@ -13,19 +13,19 @@ export default function ContactPage() {
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Phone",
-      details: ["+212 524 123 456", "+33 1 42 86 87 88"],
+      details: ["+351 96 14 05 314"],
       description: "Available 24/7 for our travelers",
     },
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      details: ["hello@midnightescales.com", "concierge@midnightescales.com"],
+      details: ["hi@midnightescale.com"],
       description: "Response within 2 hours",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
       title: "Offices",
-      details: ["Marrakech, Morocco", "Paris, France"],
+      details: ["Marrakech, Morocco", "Barcelona, Spain"],
       description: "Local expertise, global reach",
     },
     {
@@ -232,7 +232,13 @@ export default function ContactPage() {
                           <h3 className="font-sans text-xl font-light text-foreground mb-2">{info.title}</h3>
                           {info.details.map((detail, detailIndex) => (
                             <p key={detailIndex} className="text-muted-foreground mb-1">
-                              {detail}
+                              {detail.includes('@') ? (
+                                <a href={`mailto:${detail}`} className="hover:text-primary transition-colors">
+                                  {detail}
+                                </a>
+                              ) : (
+                                detail
+                              )}
                             </p>
                           ))}
                           <p className="text-sm text-primary font-medium">{info.description}</p>

@@ -4,18 +4,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight } from "lucide-react"
 import CallToAction from "@/components/call-to-action"
+import { getStaticImageUrl } from "@/lib/image-urls"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
 
       <section className="relative min-h-screen flex items-center">
-        <div className="w-full grid lg:grid-cols-2 min-h-screen">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
           {/* Left side with background image */}
           <div 
             className="relative flex flex-col justify-center px-6 lg:px-10 py-16 overflow-hidden"
             style={{
-              backgroundImage: 'url("/main/main-hero.png")',
+              backgroundImage: `url("${getStaticImageUrl('/main/main-hero.png')}")`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}>
@@ -48,16 +49,16 @@ export default function HomePage() {
           </div>
 
           {/* Right side - Light with images */}
-          <div className="bg-white flex flex-col justify-center p-8 lg:p-16">
+          <div className="bg-white hidden lg:flex flex-col justify-center p-8 lg:p-16">
             <div className="space-y-6">
                               <div className="grid grid-cols-2 gap-4">
                   <img
-                    src="/main/hero-vertical-palm-tree.png"
+                    src={getStaticImageUrl('/main/hero-vertical-palm-tree.png')}
                     alt="Palm tree in the moroccan desert"
                     className="w-50 h-70 rounded-sm ml-20 mt-20"
                   />
                   <img
-                    src="/main/hero-vertical-camels.png"
+                    src={getStaticImageUrl('/main/hero-vertical-camels.png')}
                     alt="Berber desert with camels at fullmoonlight"
                     className="w-60 h-80 rounded-sm -mt-10"
                   />
@@ -65,7 +66,7 @@ export default function HomePage() {
               
               <div className="relative">
                 <img
-                  src="/main/hero-horizontal.png"
+                  src={getStaticImageUrl('/main/hero-horizontal.png')}
                   alt="Moroccan desert landscape with berber tents"
                   className="w-7/12 h-48 object-cover rounded-sm ml-50"
                 />

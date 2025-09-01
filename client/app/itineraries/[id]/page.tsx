@@ -2,99 +2,19 @@ import { Button } from "@/components/ui/button"
 import CallToAction from "@/components/call-to-action"
 import Link from "next/link"
 import Image from "next/image"
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
 import { notFound } from "next/navigation"
+import { FirestoreService } from '@/lib/firestore'
+import type { Itinerary } from '@/types'
 
-// This would typically come from a database or API
-const experiences = [
-  {
-    id: "south-desert",
-    title: "South Desert Focus",
-    subtitle: "Burnt Gold and Silence",
-    duration: "7 Days",
-    difficulty: "Moderate",
-    difficultyStars: 3,
-    tags: ["Desert", "Adventure", "Cultural"],
-    cities: ["Marrakech", "Telouet", "Aït Benhaddou", "Todra Gorge", "Merzouga", "Agafay"],
-    description:
-      "Journey into the Sahara's golden dunes with camel rides at sunset, traditional music around desert fires, and nights under infinite stars.",
-    highlights: [
-      "Merzouga dunes exploration",
-      "Draa Valley oases visits",
-      "Tuareg music experiences",
-      "Traditional bread baking in sand",
-      "Desert yoga + full-moon rituals",
-    ],
-    image: "/sahara-caravan-sunset.png",
-    dayByDay: [
-      {
-        day: 1,
-        title: "Marrakech Arrival",
-        description:
-          "Land, private driver waiting. Quick espresso at a medina rooftop. Optional Hammam + welcome dinner.",
-      },
-      {
-        day: 2,
-        title: "Into the Mountains",
-        description: "Drive via Tizi n'Tichka. Stop in Telouet. Explore Aït Benhaddou. Sleep in nearby kasbah.",
-      },
-      {
-        day: 3,
-        title: "Into the Dunes",
-        description: "Todra Gorge route. Camel ride at sunset. Music, desert fire. Night in dunes.",
-      },
-      {
-        day: 4,
-        title: "Desert Rituals",
-        description: "Hike or quad. Nomadic tea stop. Optional stargazing guide. Sleep under stars.",
-      },
-      {
-        day: 5,
-        title: "Oases Return",
-        description: "Drive back via Fint or Draa Valley. Local meal + night outside Agafay.",
-      },
-      { day: 6, title: "Slow Marrakech", description: "Chill, shop, visit boutique galleries. Rooftop dinner." },
-      { day: 7, title: "Departure", description: "Final moments in Morocco before departure." },
-    ],
-  },
-  {
-    id: "beach-marrakech",
-    title: "Beach + Marrakech Combo",
-    subtitle: "Salt + Spice",
-    duration: "7 Days",
-    difficulty: "Easy",
-    difficultyStars: 2,
-    tags: ["Beach", "Cultural", "Relaxation"],
-    cities: ["Marrakech", "Oualidia", "Essaouira"],
-    description:
-      "Perfect blend of cultural immersion in Marrakech and coastal relaxation along Morocco's Atlantic shores.",
-    highlights: [
-      "Essaouira Beach exploration",
-      "Marrakech Medina tours",
-      "Art gallery visits",
-      "Traditional hammam experiences",
-      "Scenic coastal drives",
-    ],
-    image: "/essaouira-beach-morocco.png",
-    dayByDay: [
-      { day: 1, title: "Marrakech Arrival", description: "Land + reset. Optional dinner in hidden courtyard." },
-      { day: 2, title: "Art Loop + Spa", description: "Museum, gallery walk. Hammam. Evening in the medina." },
-      {
-        day: 3,
-        title: "Essaouira via Oualidia",
-        description: "Drive coastal route. Stop for seafood. Reach the Atlantic.",
-      },
-      { day: 4, title: "Surf + Sea Walk", description: "Beach day. Optional surf session or hammam." },
-      { day: 5, title: "Return Marrakech", description: "Chill day. Rooftop meal." },
-      { day: 6, title: "Flexible Medina Day", description: "Tailored activities or chill." },
-      { day: 7, title: "Departure", description: "Final moments before departure." },
-    ],
-  },
-]
+interface IndividualItineraryPageProps {
+  params: Promise<{ id: string }>
+}
 
-export default function IndividualItineraryPage({ params }: { params: { id: string } }) {
-  const experience = experiences.find((exp) => exp.id === params.id)
+export default async function IndividualItineraryPage({ params }: IndividualItineraryPageProps) {
+  const { id } = await params
+  
+  // Fetch the specific itinerary from Firestore
+  const experience = await FirestoreService.getItinerary(id)
 
   if (!experience) {
     notFound()
@@ -102,8 +22,6 @@ export default function IndividualItineraryPage({ params }: { params: { id: stri
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <Navbar />
-
       {/* Itinerary Details */}
       <div className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,8 +136,6 @@ export default function IndividualItineraryPage({ params }: { params: { id: stri
       </div>
 
       <CallToAction />
-
-      <Footer />
     </div>
   )
 }

@@ -32,4 +32,12 @@ export const pageHeaders: PageHeaders = {
     title: "Let's Plan Your Journey",
     subtitle: "Ready to discover Morocco? Our expert team is here to craft your perfect adventure.",
   },
+  login: {
+    title: "Login to Admin Portal",
+    subtitle: "Welcome to the admin portal. Please enter your credentials to continue.",
+  },
+  admin: {
+    title: "Welcome to the admin portal",
+    subtitle: "Add itineraries, journals, and more",
+  },
 };

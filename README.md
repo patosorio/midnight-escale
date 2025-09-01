@@ -1,6 +1,6 @@
 # Midnight Escale
 
-A luxury travel website showcasing Moroccan experiences, itineraries, and services. Built with Next.js frontend and FastAPI backend (in development).
+A luxury travel website showcasing Moroccan experiences, itineraries, and services. Built with Next.js frontend and Firestore.
 
 ## Project Structure
 
@@ -12,7 +12,6 @@ midnightescales/
     ├── hooks/       # Custom React hooks
     ├── lib/         # Utility functions and constants
     └── public/      # Static assets and images
-└── backend/          # FastAPI backend (coming soon)
 ```
 
 ## Current Status

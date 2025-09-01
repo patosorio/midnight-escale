@@ -19,4 +19,3 @@ export default function PageHeader() {
     </div>
   );
 }
-// bg-[#2a4c61]

@@ -56,11 +56,6 @@ export default function Footer() {
                     Custom Itineraries
                   </a>
                 </li>
-                <li>
-                  <a href="/about" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
               </ul>
             </div>
             <div>
@@ -77,7 +72,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="flex space-x-4 pt-2 justify-center md:justify-end">
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a href="https://www.instagram.com/midnightescale" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     <Instagram className="h-3 w-3 sm:h-4 sm:w-4" />
                   </a>
                   <a href="#" className="hover:text-white transition-colors">

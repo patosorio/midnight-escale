@@ -17,7 +17,7 @@ export default function ServicesPage() {
         "Flexible scheduling",
         "Local expertise and recommendations",
       ],
-      image: "/morocco-luxury-service.png",
+
     },
     {
       icon: <Gift className="h-8 w-8" />,
@@ -31,7 +31,7 @@ export default function ServicesPage() {
         "Cultural guidebook",
         "Personalized welcome note",
       ],
-      image: "/morocco-luxury-service.png",
+
     },
     {
       icon: <Home className="h-8 w-8" />,
@@ -45,7 +45,7 @@ export default function ServicesPage() {
         "Preferential booking rates",
         "Quality guarantee",
       ],
-      image: "/morocco-luxury-service.png",
+
     },
     {
       icon: <Route className="h-8 w-8" />,
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         "Interest-based recommendations",
         "Pace adjustment capabilities",
       ],
-      image: "/morocco-luxury-service.png",
+
     },
   ]
 
@@ -74,7 +74,7 @@ export default function ServicesPage() {
         "Argan oil treatments",
         "Meditation retreats",
       ],
-      image: "/morocco-wellness-spa.png",
+
     },
     {
       icon: <Users className="h-8 w-8" />,
@@ -86,7 +86,7 @@ export default function ServicesPage() {
         "Local family dinners",
         "Cultural ceremonies",
       ],
-      image: "/morocco-cultural-arts.png",
+
     },
     {
       icon: <ShoppingBag className="h-8 w-8" />,
@@ -98,7 +98,7 @@ export default function ServicesPage() {
         "Luxury brand partnerships",
         "Custom piece commissioning",
       ],
-      image: "/morocco-shopping-souks.png",
+
     },
     {
       icon: <ChefHat className="h-8 w-8" />,
@@ -110,7 +110,7 @@ export default function ServicesPage() {
         "Cooking demonstrations",
         "Market-to-table experiences",
       ],
-      image: "/morocco-cooking-class.png",
+
     },
     {
       icon: <Plane className="h-8 w-8" />,
@@ -122,7 +122,7 @@ export default function ServicesPage() {
         "Special dietary accommodations",
         "Accessibility arrangements",
       ],
-      image: "/morocco-luxury-service.png",
+
     },
   ]
 
@@ -130,35 +130,33 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white font-sans">
       <div className="pb-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1920px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-8">
-            {/* Column 1: Included Services */}
-            <div className="lg:col-span-4 bg-gray-50 p-8 rounded-lg">
+          <div className="space-y-16">
+            {/* Row 1: Included Services */}
+            <div className="bg-gray-50 p-8 rounded-lg">
               <div className="mb-8">
                 <h2 className="text-3xl font-light text-black mb-4">Included Services</h2>
                 <p className="text-gray-600">
                   Core services that come standard with every journey, ensuring a premium experience.
                 </p>
               </div>
-              <div className="space-y-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {coreServices.map((service, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow duration-300"
+                    className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
                   >
-                    <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 bg-[#f9d597] rounded-full flex items-center justify-center mr-4">
+                    <div className="flex flex-col items-center text-center mb-4">
+                      <div className="w-16 h-16 bg-[#f9d597] rounded-full flex items-center justify-center mb-4">
                         <div className="text-[#2a4c61]">{service.icon}</div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-medium text-black">{service.title}</h3>
-                        <p className="text-[#9b847b] font-medium text-sm">{service.subtitle}</p>
-                      </div>
+                      <h3 className="text-lg font-medium text-black mb-1">{service.title}</h3>
+                      <p className="text-[#9b847b] font-medium text-sm">{service.subtitle}</p>
                     </div>
-                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                    <p className="text-gray-600 text-sm mb-4 text-center">{service.description}</p>
                     <ul className="text-sm text-gray-500 space-y-2">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center">
-                          <div className="w-1.5 h-1.5 bg-[#f9d597] rounded-full mr-3"></div>
+                          <div className="w-1.5 h-1.5 bg-[#f9d597] rounded-full mr-3 flex-shrink-0"></div>
                           {feature}
                         </li>
                       ))}
@@ -168,47 +166,37 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Column 2: Premium Services */}
-            <div className="lg:col-span-4 bg-white p-8 rounded-lg">
+            {/* Row 2: Premium Services */}
+            <div className="bg-white p-8 rounded-lg">
               <div className="mb-8">
                 <h2 className="text-3xl font-light text-black mb-4">Premium Add-Ons</h2>
                 <p className="text-gray-600">
                   Elevated experiences and exclusive access that transform your journey into something extraordinary.
                 </p>
               </div>
-              <div className="space-y-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {premiumServices.map((service, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+                    className="bg-gray-50 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
                   >
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-[#f9d597] rounded-full flex items-center justify-center mr-3">
+                    <div className="flex flex-col items-center text-center mb-4">
+                      <div className="w-12 h-12 bg-[#f9d597] rounded-full flex items-center justify-center mb-3">
                         <div className="text-[#2a4c61]">{service.icon}</div>
                       </div>
                       <h3 className="text-lg font-medium text-black">{service.title}</h3>
                     </div>
-                    <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                    <p className="text-gray-600 text-sm mb-4 text-center">{service.description}</p>
                     <ul className="text-sm text-gray-500 space-y-1">
                       {service.examples.map((example, exampleIndex) => (
                         <li key={exampleIndex} className="flex items-center">
-                          <div className="w-1.5 h-1.5 bg-[#f9d597] rounded-full mr-3"></div>
+                          <div className="w-1.5 h-1.5 bg-[#f9d597] rounded-full mr-3 flex-shrink-0"></div>
                           {example}
                         </li>
                       ))}
                     </ul>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Column 3: Images */}
-            <div className="lg:col-span-4 space-y-8">
-              <div className="aspect-[3/4] relative overflow-hidden rounded-lg">
-
-              </div>
-              <div className="aspect-[3/4] relative overflow-hidden rounded-lg">
-
               </div>
             </div>
           </div>

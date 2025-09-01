@@ -5,15 +5,16 @@ import { Button } from "@/components/ui/button"
 import CallToAction from "@/components/call-to-action"
 import { ArrowRight } from "lucide-react"
 import { useState } from "react"
+import { getStaticImageUrl } from "@/lib/image-urls"
 
 export default function ExperiencesPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* First Row - Sticky */}
-      <div className="sticky top-[220px] z-[38] grid grid-cols-1 md:grid-cols-2 h-[66vh] md:h-[66vh] bg-white">
+      <div className="md:sticky md:top-[220px] z-[38] grid grid-cols-1 md:grid-cols-2 h-auto md:h-[66vh] bg-white">
         {/* Nomadic Echoes - White Background */}
-        <div className="bg-[#2a4c61] p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-[#2a4c61] p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-white mb-4">"Nomadic Echoes" – Desert + Silence</h3>
@@ -34,10 +35,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col gap-4 w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col gap-4 w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/experiences/nomadic/nomadic-accomodations-morocco.png"
+                  src={getStaticImageUrl("/experiences/nomadic/nomadic-accomodations-morocco.png")}
                   alt="Luxury nomadic accommodations in Morocco"
                   fill
                   className="object-cover rounded-lg"
@@ -53,8 +54,8 @@ export default function ExperiencesPage() {
         </div>
 
         {/* Art Medina - Blue Background */}
-        <div className="bg-white p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-white p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-[#2a4c61] mb-4">"Art Medina" – Urban Creative Pulse</h3>
@@ -73,10 +74,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/experiences/art-medina/art-design.png"
+                  src={getStaticImageUrl("/experiences/art-medina/art-design.png")}
                   alt="Art Medina - Urban Creative Pulse"
                   fill
                   className="object-cover rounded-lg"
@@ -93,10 +94,10 @@ export default function ExperiencesPage() {
       </div>
 
       {/* Second Row - Sticky */}
-      <div className="sticky top-[220px] z-[39] grid grid-cols-1 md:grid-cols-2 h-[66vh] md:h-[66vh] bg-white">
+      <div className="md:sticky md:top-[220px] z-[39] grid grid-cols-1 md:grid-cols-2 h-auto md:h-[66vh] bg-white">
         {/* Raw Luxury - White Background */}
-        <div className="bg-white p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-white p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-[#2a4c61] mb-4">"Raw Luxury" – Nature + Wellness</h3>
@@ -117,10 +118,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/experiences/nature-wellness/morocco-hammam.png"
+                  src={getStaticImageUrl("/experiences/nature-wellness/morocco-hammam.png")}
                   alt="Raw Luxury - Moroccan Hammam"
                   fill
                   className="object-cover rounded-lg"
@@ -136,8 +137,8 @@ export default function ExperiencesPage() {
         </div>
 
         {/* Coastal Escape - Brown Background */}
-        <div className="bg-[#847166] p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-[#847166] p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-white mb-4">"Coastal Escape" – Surf + Yoga</h3>
@@ -158,10 +159,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/experiences/coastal-escape/coastal-escape.png"
+                  src={getStaticImageUrl("/experiences/coastal-escape/coastal-escape.png")}
                   alt="Coastal Escape - Surf and Yoga"
                   fill
                   className="object-cover rounded-lg"
@@ -180,10 +181,10 @@ export default function ExperiencesPage() {
       </div>
 
       {/* Third Row - Fixed */}
-      <div className="relative z-[40] grid grid-cols-1 md:grid-cols-2 h-[66vh] md:h-[66vh]">
+      <div className="relative z-[40] grid grid-cols-1 md:grid-cols-2 h-auto md:h-[66vh]">
         {/* Sacred Morocco - Purple Background */}
-        <div className="bg-[#2a4c61] p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-[#2a4c61] p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-white mb-4">"Sacred Morocco" – Spiritual Routes</h3>
@@ -204,10 +205,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/experiences/sacred-morocco/food-and-tea-morocco-experience.png"
+                  src={getStaticImageUrl("/experiences/sacred-morocco/food-and-tea-morocco-experience.png")}
                   alt="Sacred Morocco - Spiritual Routes"
                   fill
                   className="object-cover rounded-lg"
@@ -223,8 +224,8 @@ export default function ExperiencesPage() {
         </div>
 
         {/* Timeless Cities - White Background */}
-        <div className="bg-white p-8 flex flex-col h-full">
-          <div className="flex flex-col md:flex-row gap-8 h-full">
+        <div className="bg-white p-8 flex flex-col h-auto md:h-full">
+          <div className="flex flex-col md:flex-row gap-8 h-auto md:h-full">
             <div className="flex-1 flex flex-col">
               <div>
                 <h3 className="text-xl font-medium text-[#2a4c61] mb-4">"Timeless Cities" – Cultural Core</h3>
@@ -245,10 +246,10 @@ export default function ExperiencesPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 h-full">
-              <div className="relative w-full h-full">
+            <div className="flex flex-col w-full md:w-1/2 h-auto md:h-full">
+              <div className="relative w-full h-64 md:h-full">
                 <Image
-                  src="/fez-medina-architecture.png"
+                  src={getStaticImageUrl("/experiences/timeless-cities/fez-medina-architecture.png")}
                   alt="Timeless Cities - Cultural Core"
                   fill
                   className="object-cover rounded-lg"
